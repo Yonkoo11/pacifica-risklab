@@ -9,6 +9,12 @@
     return '#ef4444';
   }
 
+  function scoreRgb(score: number): string {
+    if (score >= 7) return '34,197,94';
+    if (score >= 4) return '234,179,8';
+    return '239,68,68';
+  }
+
   function formatUsd(n: number): string {
     if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
     if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -20,8 +26,8 @@
 <div class="summary">
   <h3>{label}</h3>
   <div class="stats-grid">
-    <div class="stat">
-      <span class="stat-value" style="color: {scoreColor(result.summary.survival_score)}">
+    <div class="stat stat-hero" style="--score-rgb: {scoreRgb(result.summary.survival_score)}">
+      <span class="stat-value hero-value" style="color: {scoreColor(result.summary.survival_score)}">
         {result.summary.survival_score}/10
       </span>
       <span class="stat-label">Survival Score</span>
@@ -85,6 +91,18 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
+  }
+  .stat-hero {
+    grid-column: 1 / -1;
+    box-shadow: 0 0 30px rgba(var(--score-rgb), 0.15);
+    animation: pulse-glow 3s ease-out infinite;
+  }
+  .hero-value {
+    font-size: 2.5rem;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 30px rgba(var(--score-rgb), 0.15); }
+    50% { box-shadow: 0 0 50px rgba(var(--score-rgb), 0.25); }
   }
   .stat-label {
     font-size: 0.75rem;
