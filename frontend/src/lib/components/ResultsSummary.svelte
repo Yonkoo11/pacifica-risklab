@@ -64,10 +64,11 @@
 
 <style>
   .summary {
-    background: #1a1a2e;
-    border: 1px solid #2a2a4a;
+    background: #1e1e2e;
+    border: 1px solid #3a3a5a;
     border-radius: 12px;
     padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(59,130,246,0.08);
   }
   h3 {
     margin: 0 0 1rem;

@@ -340,8 +340,14 @@
   section {
     background: #1a1a2e;
     border: 1px solid #2a2a4a;
+    border-left: 2px solid transparent;
     border-radius: 8px;
     padding: 1rem;
+    transition: border-left-color 0.2s ease-out;
+  }
+
+  section:focus-within {
+    border-left-color: #3b82f6;
   }
 
   label {
@@ -582,8 +588,8 @@
   }
 
   .limitations {
-    background: #1a1a2e;
-    border: 1px solid #2a2a4a;
+    background: #141422;
+    border: 1px solid rgba(42,42,74,0.5);
     border-radius: 12px;
     padding: 1.25rem;
   }
