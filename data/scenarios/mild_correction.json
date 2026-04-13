@@ -1,0 +1,1455 @@
+{
+  "id": "mild_correction",
+  "meta": {
+    "name": "Mild 5% Correction",
+    "description": "Synthetic scenario: steady 5% decline over 6 hours. Tests parameter sensitivity.",
+    "interval": "1m",
+    "severity": "mild"
+  },
+  "path": [
+    {
+      "timestamp": 0,
+      "price_pct": 1.0
+    },
+    {
+      "timestamp": 60000,
+      "price_pct": 0.9998611111111111
+    },
+    {
+      "timestamp": 120000,
+      "price_pct": 0.9997222222222222
+    },
+    {
+      "timestamp": 180000,
+      "price_pct": 0.9995833333333334
+    },
+    {
+      "timestamp": 240000,
+      "price_pct": 0.9994444444444445
+    },
+    {
+      "timestamp": 300000,
+      "price_pct": 0.9993055555555556
+    },
+    {
+      "timestamp": 360000,
+      "price_pct": 0.9991666666666666
+    },
+    {
+      "timestamp": 420000,
+      "price_pct": 0.9990277777777777
+    },
+    {
+      "timestamp": 480000,
+      "price_pct": 0.9988888888888889
+    },
+    {
+      "timestamp": 540000,
+      "price_pct": 0.99875
+    },
+    {
+      "timestamp": 600000,
+      "price_pct": 0.9986111111111111
+    },
+    {
+      "timestamp": 660000,
+      "price_pct": 0.9984722222222222
+    },
+    {
+      "timestamp": 720000,
+      "price_pct": 0.9983333333333333
+    },
+    {
+      "timestamp": 780000,
+      "price_pct": 0.9981944444444445
+    },
+    {
+      "timestamp": 840000,
+      "price_pct": 0.9980555555555556
+    },
+    {
+      "timestamp": 900000,
+      "price_pct": 0.9979166666666667
+    },
+    {
+      "timestamp": 960000,
+      "price_pct": 0.9977777777777778
+    },
+    {
+      "timestamp": 1020000,
+      "price_pct": 0.9976388888888889
+    },
+    {
+      "timestamp": 1080000,
+      "price_pct": 0.9975
+    },
+    {
+      "timestamp": 1140000,
+      "price_pct": 0.9973611111111111
+    },
+    {
+      "timestamp": 1200000,
+      "price_pct": 0.9972222222222222
+    },
+    {
+      "timestamp": 1260000,
+      "price_pct": 0.9970833333333333
+    },
+    {
+      "timestamp": 1320000,
+      "price_pct": 0.9969444444444444
+    },
+    {
+      "timestamp": 1380000,
+      "price_pct": 0.9968055555555555
+    },
+    {
+      "timestamp": 1440000,
+      "price_pct": 0.9966666666666667
+    },
+    {
+      "timestamp": 1500000,
+      "price_pct": 0.9965277777777778
+    },
+    {
+      "timestamp": 1560000,
+      "price_pct": 0.9963888888888889
+    },
+    {
+      "timestamp": 1620000,
+      "price_pct": 0.99625
+    },
+    {
+      "timestamp": 1680000,
+      "price_pct": 0.9961111111111111
+    },
+    {
+      "timestamp": 1740000,
+      "price_pct": 0.9959722222222223
+    },
+    {
+      "timestamp": 1800000,
+      "price_pct": 0.9958333333333333
+    },
+    {
+      "timestamp": 1860000,
+      "price_pct": 0.9956944444444444
+    },
+    {
+      "timestamp": 1920000,
+      "price_pct": 0.9955555555555555
+    },
+    {
+      "timestamp": 1980000,
+      "price_pct": 0.9954166666666666
+    },
+    {
+      "timestamp": 2040000,
+      "price_pct": 0.9952777777777778
+    },
+    {
+      "timestamp": 2100000,
+      "price_pct": 0.9951388888888889
+    },
+    {
+      "timestamp": 2160000,
+      "price_pct": 0.995
+    },
+    {
+      "timestamp": 2220000,
+      "price_pct": 0.9948611111111111
+    },
+    {
+      "timestamp": 2280000,
+      "price_pct": 0.9947222222222222
+    },
+    {
+      "timestamp": 2340000,
+      "price_pct": 0.9945833333333334
+    },
+    {
+      "timestamp": 2400000,
+      "price_pct": 0.9944444444444445
+    },
+    {
+      "timestamp": 2460000,
+      "price_pct": 0.9943055555555556
+    },
+    {
+      "timestamp": 2520000,
+      "price_pct": 0.9941666666666666
+    },
+    {
+      "timestamp": 2580000,
+      "price_pct": 0.9940277777777777
+    },
+    {
+      "timestamp": 2640000,
+      "price_pct": 0.9938888888888889
+    },
+    {
+      "timestamp": 2700000,
+      "price_pct": 0.99375
+    },
+    {
+      "timestamp": 2760000,
+      "price_pct": 0.9936111111111111
+    },
+    {
+      "timestamp": 2820000,
+      "price_pct": 0.9934722222222222
+    },
+    {
+      "timestamp": 2880000,
+      "price_pct": 0.9933333333333333
+    },
+    {
+      "timestamp": 2940000,
+      "price_pct": 0.9931944444444445
+    },
+    {
+      "timestamp": 3000000,
+      "price_pct": 0.9930555555555556
+    },
+    {
+      "timestamp": 3060000,
+      "price_pct": 0.9929166666666667
+    },
+    {
+      "timestamp": 3120000,
+      "price_pct": 0.9927777777777778
+    },
+    {
+      "timestamp": 3180000,
+      "price_pct": 0.9926388888888888
+    },
+    {
+      "timestamp": 3240000,
+      "price_pct": 0.9925
+    },
+    {
+      "timestamp": 3300000,
+      "price_pct": 0.9923611111111111
+    },
+    {
+      "timestamp": 3360000,
+      "price_pct": 0.9922222222222222
+    },
+    {
+      "timestamp": 3420000,
+      "price_pct": 0.9920833333333333
+    },
+    {
+      "timestamp": 3480000,
+      "price_pct": 0.9919444444444444
+    },
+    {
+      "timestamp": 3540000,
+      "price_pct": 0.9918055555555556
+    },
+    {
+      "timestamp": 3600000,
+      "price_pct": 0.9916666666666667
+    },
+    {
+      "timestamp": 3660000,
+      "price_pct": 0.9915277777777778
+    },
+    {
+      "timestamp": 3720000,
+      "price_pct": 0.9913888888888889
+    },
+    {
+      "timestamp": 3780000,
+      "price_pct": 0.99125
+    },
+    {
+      "timestamp": 3840000,
+      "price_pct": 0.9911111111111112
+    },
+    {
+      "timestamp": 3900000,
+      "price_pct": 0.9909722222222223
+    },
+    {
+      "timestamp": 3960000,
+      "price_pct": 0.9908333333333333
+    },
+    {
+      "timestamp": 4020000,
+      "price_pct": 0.9906944444444444
+    },
+    {
+      "timestamp": 4080000,
+      "price_pct": 0.9905555555555555
+    },
+    {
+      "timestamp": 4140000,
+      "price_pct": 0.9904166666666666
+    },
+    {
+      "timestamp": 4200000,
+      "price_pct": 0.9902777777777778
+    },
+    {
+      "timestamp": 4260000,
+      "price_pct": 0.9901388888888889
+    },
+    {
+      "timestamp": 4320000,
+      "price_pct": 0.99
+    },
+    {
+      "timestamp": 4380000,
+      "price_pct": 0.9898611111111111
+    },
+    {
+      "timestamp": 4440000,
+      "price_pct": 0.9897222222222222
+    },
+    {
+      "timestamp": 4500000,
+      "price_pct": 0.9895833333333334
+    },
+    {
+      "timestamp": 4560000,
+      "price_pct": 0.9894444444444445
+    },
+    {
+      "timestamp": 4620000,
+      "price_pct": 0.9893055555555555
+    },
+    {
+      "timestamp": 4680000,
+      "price_pct": 0.9891666666666666
+    },
+    {
+      "timestamp": 4740000,
+      "price_pct": 0.9890277777777777
+    },
+    {
+      "timestamp": 4800000,
+      "price_pct": 0.9888888888888889
+    },
+    {
+      "timestamp": 4860000,
+      "price_pct": 0.98875
+    },
+    {
+      "timestamp": 4920000,
+      "price_pct": 0.9886111111111111
+    },
+    {
+      "timestamp": 4980000,
+      "price_pct": 0.9884722222222222
+    },
+    {
+      "timestamp": 5040000,
+      "price_pct": 0.9883333333333333
+    },
+    {
+      "timestamp": 5100000,
+      "price_pct": 0.9881944444444445
+    },
+    {
+      "timestamp": 5160000,
+      "price_pct": 0.9880555555555556
+    },
+    {
+      "timestamp": 5220000,
+      "price_pct": 0.9879166666666667
+    },
+    {
+      "timestamp": 5280000,
+      "price_pct": 0.9877777777777778
+    },
+    {
+      "timestamp": 5340000,
+      "price_pct": 0.9876388888888888
+    },
+    {
+      "timestamp": 5400000,
+      "price_pct": 0.9875
+    },
+    {
+      "timestamp": 5460000,
+      "price_pct": 0.9873611111111111
+    },
+    {
+      "timestamp": 5520000,
+      "price_pct": 0.9872222222222222
+    },
+    {
+      "timestamp": 5580000,
+      "price_pct": 0.9870833333333333
+    },
+    {
+      "timestamp": 5640000,
+      "price_pct": 0.9869444444444444
+    },
+    {
+      "timestamp": 5700000,
+      "price_pct": 0.9868055555555556
+    },
+    {
+      "timestamp": 5760000,
+      "price_pct": 0.9866666666666667
+    },
+    {
+      "timestamp": 5820000,
+      "price_pct": 0.9865277777777778
+    },
+    {
+      "timestamp": 5880000,
+      "price_pct": 0.9863888888888889
+    },
+    {
+      "timestamp": 5940000,
+      "price_pct": 0.98625
+    },
+    {
+      "timestamp": 6000000,
+      "price_pct": 0.9861111111111112
+    },
+    {
+      "timestamp": 6060000,
+      "price_pct": 0.9859722222222222
+    },
+    {
+      "timestamp": 6120000,
+      "price_pct": 0.9858333333333333
+    },
+    {
+      "timestamp": 6180000,
+      "price_pct": 0.9856944444444444
+    },
+    {
+      "timestamp": 6240000,
+      "price_pct": 0.9855555555555555
+    },
+    {
+      "timestamp": 6300000,
+      "price_pct": 0.9854166666666667
+    },
+    {
+      "timestamp": 6360000,
+      "price_pct": 0.9852777777777778
+    },
+    {
+      "timestamp": 6420000,
+      "price_pct": 0.9851388888888889
+    },
+    {
+      "timestamp": 6480000,
+      "price_pct": 0.985
+    },
+    {
+      "timestamp": 6540000,
+      "price_pct": 0.9848611111111111
+    },
+    {
+      "timestamp": 6600000,
+      "price_pct": 0.9847222222222223
+    },
+    {
+      "timestamp": 6660000,
+      "price_pct": 0.9845833333333334
+    },
+    {
+      "timestamp": 6720000,
+      "price_pct": 0.9844444444444445
+    },
+    {
+      "timestamp": 6780000,
+      "price_pct": 0.9843055555555555
+    },
+    {
+      "timestamp": 6840000,
+      "price_pct": 0.9841666666666666
+    },
+    {
+      "timestamp": 6900000,
+      "price_pct": 0.9840277777777777
+    },
+    {
+      "timestamp": 6960000,
+      "price_pct": 0.9838888888888889
+    },
+    {
+      "timestamp": 7020000,
+      "price_pct": 0.98375
+    },
+    {
+      "timestamp": 7080000,
+      "price_pct": 0.9836111111111111
+    },
+    {
+      "timestamp": 7140000,
+      "price_pct": 0.9834722222222222
+    },
+    {
+      "timestamp": 7200000,
+      "price_pct": 0.9833333333333333
+    },
+    {
+      "timestamp": 7260000,
+      "price_pct": 0.9831944444444445
+    },
+    {
+      "timestamp": 7320000,
+      "price_pct": 0.9830555555555556
+    },
+    {
+      "timestamp": 7380000,
+      "price_pct": 0.9829166666666667
+    },
+    {
+      "timestamp": 7440000,
+      "price_pct": 0.9827777777777778
+    },
+    {
+      "timestamp": 7500000,
+      "price_pct": 0.9826388888888888
+    },
+    {
+      "timestamp": 7560000,
+      "price_pct": 0.9825
+    },
+    {
+      "timestamp": 7620000,
+      "price_pct": 0.9823611111111111
+    },
+    {
+      "timestamp": 7680000,
+      "price_pct": 0.9822222222222222
+    },
+    {
+      "timestamp": 7740000,
+      "price_pct": 0.9820833333333333
+    },
+    {
+      "timestamp": 7800000,
+      "price_pct": 0.9819444444444444
+    },
+    {
+      "timestamp": 7860000,
+      "price_pct": 0.9818055555555556
+    },
+    {
+      "timestamp": 7920000,
+      "price_pct": 0.9816666666666667
+    },
+    {
+      "timestamp": 7980000,
+      "price_pct": 0.9815277777777778
+    },
+    {
+      "timestamp": 8040000,
+      "price_pct": 0.9813888888888889
+    },
+    {
+      "timestamp": 8100000,
+      "price_pct": 0.98125
+    },
+    {
+      "timestamp": 8160000,
+      "price_pct": 0.9811111111111112
+    },
+    {
+      "timestamp": 8220000,
+      "price_pct": 0.9809722222222222
+    },
+    {
+      "timestamp": 8280000,
+      "price_pct": 0.9808333333333333
+    },
+    {
+      "timestamp": 8340000,
+      "price_pct": 0.9806944444444444
+    },
+    {
+      "timestamp": 8400000,
+      "price_pct": 0.9805555555555555
+    },
+    {
+      "timestamp": 8460000,
+      "price_pct": 0.9804166666666667
+    },
+    {
+      "timestamp": 8520000,
+      "price_pct": 0.9802777777777778
+    },
+    {
+      "timestamp": 8580000,
+      "price_pct": 0.9801388888888889
+    },
+    {
+      "timestamp": 8640000,
+      "price_pct": 0.98
+    },
+    {
+      "timestamp": 8700000,
+      "price_pct": 0.9798611111111111
+    },
+    {
+      "timestamp": 8760000,
+      "price_pct": 0.9797222222222223
+    },
+    {
+      "timestamp": 8820000,
+      "price_pct": 0.9795833333333334
+    },
+    {
+      "timestamp": 8880000,
+      "price_pct": 0.9794444444444445
+    },
+    {
+      "timestamp": 8940000,
+      "price_pct": 0.9793055555555555
+    },
+    {
+      "timestamp": 9000000,
+      "price_pct": 0.9791666666666666
+    },
+    {
+      "timestamp": 9060000,
+      "price_pct": 0.9790277777777778
+    },
+    {
+      "timestamp": 9120000,
+      "price_pct": 0.9788888888888889
+    },
+    {
+      "timestamp": 9180000,
+      "price_pct": 0.97875
+    },
+    {
+      "timestamp": 9240000,
+      "price_pct": 0.9786111111111111
+    },
+    {
+      "timestamp": 9300000,
+      "price_pct": 0.9784722222222222
+    },
+    {
+      "timestamp": 9360000,
+      "price_pct": 0.9783333333333333
+    },
+    {
+      "timestamp": 9420000,
+      "price_pct": 0.9781944444444445
+    },
+    {
+      "timestamp": 9480000,
+      "price_pct": 0.9780555555555556
+    },
+    {
+      "timestamp": 9540000,
+      "price_pct": 0.9779166666666667
+    },
+    {
+      "timestamp": 9600000,
+      "price_pct": 0.9777777777777777
+    },
+    {
+      "timestamp": 9660000,
+      "price_pct": 0.9776388888888888
+    },
+    {
+      "timestamp": 9720000,
+      "price_pct": 0.9775
+    },
+    {
+      "timestamp": 9780000,
+      "price_pct": 0.9773611111111111
+    },
+    {
+      "timestamp": 9840000,
+      "price_pct": 0.9772222222222222
+    },
+    {
+      "timestamp": 9900000,
+      "price_pct": 0.9770833333333333
+    },
+    {
+      "timestamp": 9960000,
+      "price_pct": 0.9769444444444444
+    },
+    {
+      "timestamp": 10020000,
+      "price_pct": 0.9768055555555556
+    },
+    {
+      "timestamp": 10080000,
+      "price_pct": 0.9766666666666667
+    },
+    {
+      "timestamp": 10140000,
+      "price_pct": 0.9765277777777778
+    },
+    {
+      "timestamp": 10200000,
+      "price_pct": 0.9763888888888889
+    },
+    {
+      "timestamp": 10260000,
+      "price_pct": 0.97625
+    },
+    {
+      "timestamp": 10320000,
+      "price_pct": 0.9761111111111112
+    },
+    {
+      "timestamp": 10380000,
+      "price_pct": 0.9759722222222222
+    },
+    {
+      "timestamp": 10440000,
+      "price_pct": 0.9758333333333333
+    },
+    {
+      "timestamp": 10500000,
+      "price_pct": 0.9756944444444444
+    },
+    {
+      "timestamp": 10560000,
+      "price_pct": 0.9755555555555555
+    },
+    {
+      "timestamp": 10620000,
+      "price_pct": 0.9754166666666667
+    },
+    {
+      "timestamp": 10680000,
+      "price_pct": 0.9752777777777778
+    },
+    {
+      "timestamp": 10740000,
+      "price_pct": 0.9751388888888889
+    },
+    {
+      "timestamp": 10800000,
+      "price_pct": 0.975
+    },
+    {
+      "timestamp": 10860000,
+      "price_pct": 0.9748611111111111
+    },
+    {
+      "timestamp": 10920000,
+      "price_pct": 0.9747222222222223
+    },
+    {
+      "timestamp": 10980000,
+      "price_pct": 0.9745833333333334
+    },
+    {
+      "timestamp": 11040000,
+      "price_pct": 0.9744444444444444
+    },
+    {
+      "timestamp": 11100000,
+      "price_pct": 0.9743055555555555
+    },
+    {
+      "timestamp": 11160000,
+      "price_pct": 0.9741666666666666
+    },
+    {
+      "timestamp": 11220000,
+      "price_pct": 0.9740277777777778
+    },
+    {
+      "timestamp": 11280000,
+      "price_pct": 0.9738888888888889
+    },
+    {
+      "timestamp": 11340000,
+      "price_pct": 0.97375
+    },
+    {
+      "timestamp": 11400000,
+      "price_pct": 0.9736111111111111
+    },
+    {
+      "timestamp": 11460000,
+      "price_pct": 0.9734722222222222
+    },
+    {
+      "timestamp": 11520000,
+      "price_pct": 0.9733333333333334
+    },
+    {
+      "timestamp": 11580000,
+      "price_pct": 0.9731944444444445
+    },
+    {
+      "timestamp": 11640000,
+      "price_pct": 0.9730555555555556
+    },
+    {
+      "timestamp": 11700000,
+      "price_pct": 0.9729166666666667
+    },
+    {
+      "timestamp": 11760000,
+      "price_pct": 0.9727777777777777
+    },
+    {
+      "timestamp": 11820000,
+      "price_pct": 0.9726388888888888
+    },
+    {
+      "timestamp": 11880000,
+      "price_pct": 0.9725
+    },
+    {
+      "timestamp": 11940000,
+      "price_pct": 0.9723611111111111
+    },
+    {
+      "timestamp": 12000000,
+      "price_pct": 0.9722222222222222
+    },
+    {
+      "timestamp": 12060000,
+      "price_pct": 0.9720833333333333
+    },
+    {
+      "timestamp": 12120000,
+      "price_pct": 0.9719444444444444
+    },
+    {
+      "timestamp": 12180000,
+      "price_pct": 0.9718055555555556
+    },
+    {
+      "timestamp": 12240000,
+      "price_pct": 0.9716666666666667
+    },
+    {
+      "timestamp": 12300000,
+      "price_pct": 0.9715277777777778
+    },
+    {
+      "timestamp": 12360000,
+      "price_pct": 0.9713888888888889
+    },
+    {
+      "timestamp": 12420000,
+      "price_pct": 0.97125
+    },
+    {
+      "timestamp": 12480000,
+      "price_pct": 0.9711111111111111
+    },
+    {
+      "timestamp": 12540000,
+      "price_pct": 0.9709722222222222
+    },
+    {
+      "timestamp": 12600000,
+      "price_pct": 0.9708333333333333
+    },
+    {
+      "timestamp": 12660000,
+      "price_pct": 0.9706944444444444
+    },
+    {
+      "timestamp": 12720000,
+      "price_pct": 0.9705555555555555
+    },
+    {
+      "timestamp": 12780000,
+      "price_pct": 0.9704166666666667
+    },
+    {
+      "timestamp": 12840000,
+      "price_pct": 0.9702777777777778
+    },
+    {
+      "timestamp": 12900000,
+      "price_pct": 0.9701388888888889
+    },
+    {
+      "timestamp": 12960000,
+      "price_pct": 0.97
+    },
+    {
+      "timestamp": 13020000,
+      "price_pct": 0.9698611111111111
+    },
+    {
+      "timestamp": 13080000,
+      "price_pct": 0.9697222222222223
+    },
+    {
+      "timestamp": 13140000,
+      "price_pct": 0.9695833333333334
+    },
+    {
+      "timestamp": 13200000,
+      "price_pct": 0.9694444444444444
+    },
+    {
+      "timestamp": 13260000,
+      "price_pct": 0.9693055555555555
+    },
+    {
+      "timestamp": 13320000,
+      "price_pct": 0.9691666666666666
+    },
+    {
+      "timestamp": 13380000,
+      "price_pct": 0.9690277777777778
+    },
+    {
+      "timestamp": 13440000,
+      "price_pct": 0.9688888888888889
+    },
+    {
+      "timestamp": 13500000,
+      "price_pct": 0.96875
+    },
+    {
+      "timestamp": 13560000,
+      "price_pct": 0.9686111111111111
+    },
+    {
+      "timestamp": 13620000,
+      "price_pct": 0.9684722222222222
+    },
+    {
+      "timestamp": 13680000,
+      "price_pct": 0.9683333333333334
+    },
+    {
+      "timestamp": 13740000,
+      "price_pct": 0.9681944444444445
+    },
+    {
+      "timestamp": 13800000,
+      "price_pct": 0.9680555555555556
+    },
+    {
+      "timestamp": 13860000,
+      "price_pct": 0.9679166666666666
+    },
+    {
+      "timestamp": 13920000,
+      "price_pct": 0.9677777777777777
+    },
+    {
+      "timestamp": 13980000,
+      "price_pct": 0.9676388888888889
+    },
+    {
+      "timestamp": 14040000,
+      "price_pct": 0.9675
+    },
+    {
+      "timestamp": 14100000,
+      "price_pct": 0.9673611111111111
+    },
+    {
+      "timestamp": 14160000,
+      "price_pct": 0.9672222222222222
+    },
+    {
+      "timestamp": 14220000,
+      "price_pct": 0.9670833333333333
+    },
+    {
+      "timestamp": 14280000,
+      "price_pct": 0.9669444444444445
+    },
+    {
+      "timestamp": 14340000,
+      "price_pct": 0.9668055555555556
+    },
+    {
+      "timestamp": 14400000,
+      "price_pct": 0.9666666666666667
+    },
+    {
+      "timestamp": 14460000,
+      "price_pct": 0.9665277777777778
+    },
+    {
+      "timestamp": 14520000,
+      "price_pct": 0.9663888888888889
+    },
+    {
+      "timestamp": 14580000,
+      "price_pct": 0.96625
+    },
+    {
+      "timestamp": 14640000,
+      "price_pct": 0.9661111111111111
+    },
+    {
+      "timestamp": 14700000,
+      "price_pct": 0.9659722222222222
+    },
+    {
+      "timestamp": 14760000,
+      "price_pct": 0.9658333333333333
+    },
+    {
+      "timestamp": 14820000,
+      "price_pct": 0.9656944444444444
+    },
+    {
+      "timestamp": 14880000,
+      "price_pct": 0.9655555555555555
+    },
+    {
+      "timestamp": 14940000,
+      "price_pct": 0.9654166666666667
+    },
+    {
+      "timestamp": 15000000,
+      "price_pct": 0.9652777777777778
+    },
+    {
+      "timestamp": 15060000,
+      "price_pct": 0.9651388888888889
+    },
+    {
+      "timestamp": 15120000,
+      "price_pct": 0.965
+    },
+    {
+      "timestamp": 15180000,
+      "price_pct": 0.9648611111111111
+    },
+    {
+      "timestamp": 15240000,
+      "price_pct": 0.9647222222222223
+    },
+    {
+      "timestamp": 15300000,
+      "price_pct": 0.9645833333333333
+    },
+    {
+      "timestamp": 15360000,
+      "price_pct": 0.9644444444444444
+    },
+    {
+      "timestamp": 15420000,
+      "price_pct": 0.9643055555555555
+    },
+    {
+      "timestamp": 15480000,
+      "price_pct": 0.9641666666666666
+    },
+    {
+      "timestamp": 15540000,
+      "price_pct": 0.9640277777777778
+    },
+    {
+      "timestamp": 15600000,
+      "price_pct": 0.9638888888888889
+    },
+    {
+      "timestamp": 15660000,
+      "price_pct": 0.96375
+    },
+    {
+      "timestamp": 15720000,
+      "price_pct": 0.9636111111111111
+    },
+    {
+      "timestamp": 15780000,
+      "price_pct": 0.9634722222222222
+    },
+    {
+      "timestamp": 15840000,
+      "price_pct": 0.9633333333333334
+    },
+    {
+      "timestamp": 15900000,
+      "price_pct": 0.9631944444444445
+    },
+    {
+      "timestamp": 15960000,
+      "price_pct": 0.9630555555555556
+    },
+    {
+      "timestamp": 16020000,
+      "price_pct": 0.9629166666666666
+    },
+    {
+      "timestamp": 16080000,
+      "price_pct": 0.9627777777777777
+    },
+    {
+      "timestamp": 16140000,
+      "price_pct": 0.9626388888888889
+    },
+    {
+      "timestamp": 16200000,
+      "price_pct": 0.9625
+    },
+    {
+      "timestamp": 16260000,
+      "price_pct": 0.9623611111111111
+    },
+    {
+      "timestamp": 16320000,
+      "price_pct": 0.9622222222222222
+    },
+    {
+      "timestamp": 16380000,
+      "price_pct": 0.9620833333333333
+    },
+    {
+      "timestamp": 16440000,
+      "price_pct": 0.9619444444444445
+    },
+    {
+      "timestamp": 16500000,
+      "price_pct": 0.9618055555555556
+    },
+    {
+      "timestamp": 16560000,
+      "price_pct": 0.9616666666666667
+    },
+    {
+      "timestamp": 16620000,
+      "price_pct": 0.9615277777777778
+    },
+    {
+      "timestamp": 16680000,
+      "price_pct": 0.9613888888888888
+    },
+    {
+      "timestamp": 16740000,
+      "price_pct": 0.96125
+    },
+    {
+      "timestamp": 16800000,
+      "price_pct": 0.9611111111111111
+    },
+    {
+      "timestamp": 16860000,
+      "price_pct": 0.9609722222222222
+    },
+    {
+      "timestamp": 16920000,
+      "price_pct": 0.9608333333333333
+    },
+    {
+      "timestamp": 16980000,
+      "price_pct": 0.9606944444444444
+    },
+    {
+      "timestamp": 17040000,
+      "price_pct": 0.9605555555555556
+    },
+    {
+      "timestamp": 17100000,
+      "price_pct": 0.9604166666666667
+    },
+    {
+      "timestamp": 17160000,
+      "price_pct": 0.9602777777777778
+    },
+    {
+      "timestamp": 17220000,
+      "price_pct": 0.9601388888888889
+    },
+    {
+      "timestamp": 17280000,
+      "price_pct": 0.96
+    },
+    {
+      "timestamp": 17340000,
+      "price_pct": 0.959861111111111
+    },
+    {
+      "timestamp": 17400000,
+      "price_pct": 0.9597222222222223
+    },
+    {
+      "timestamp": 17460000,
+      "price_pct": 0.9595833333333333
+    },
+    {
+      "timestamp": 17520000,
+      "price_pct": 0.9594444444444444
+    },
+    {
+      "timestamp": 17580000,
+      "price_pct": 0.9593055555555555
+    },
+    {
+      "timestamp": 17640000,
+      "price_pct": 0.9591666666666666
+    },
+    {
+      "timestamp": 17700000,
+      "price_pct": 0.9590277777777778
+    },
+    {
+      "timestamp": 17760000,
+      "price_pct": 0.9588888888888889
+    },
+    {
+      "timestamp": 17820000,
+      "price_pct": 0.95875
+    },
+    {
+      "timestamp": 17880000,
+      "price_pct": 0.9586111111111111
+    },
+    {
+      "timestamp": 17940000,
+      "price_pct": 0.9584722222222222
+    },
+    {
+      "timestamp": 18000000,
+      "price_pct": 0.9583333333333334
+    },
+    {
+      "timestamp": 18060000,
+      "price_pct": 0.9581944444444445
+    },
+    {
+      "timestamp": 18120000,
+      "price_pct": 0.9580555555555555
+    },
+    {
+      "timestamp": 18180000,
+      "price_pct": 0.9579166666666666
+    },
+    {
+      "timestamp": 18240000,
+      "price_pct": 0.9577777777777777
+    },
+    {
+      "timestamp": 18300000,
+      "price_pct": 0.9576388888888889
+    },
+    {
+      "timestamp": 18360000,
+      "price_pct": 0.9575
+    },
+    {
+      "timestamp": 18420000,
+      "price_pct": 0.9573611111111111
+    },
+    {
+      "timestamp": 18480000,
+      "price_pct": 0.9572222222222222
+    },
+    {
+      "timestamp": 18540000,
+      "price_pct": 0.9570833333333333
+    },
+    {
+      "timestamp": 18600000,
+      "price_pct": 0.9569444444444445
+    },
+    {
+      "timestamp": 18660000,
+      "price_pct": 0.9568055555555556
+    },
+    {
+      "timestamp": 18720000,
+      "price_pct": 0.9566666666666667
+    },
+    {
+      "timestamp": 18780000,
+      "price_pct": 0.9565277777777778
+    },
+    {
+      "timestamp": 18840000,
+      "price_pct": 0.9563888888888888
+    },
+    {
+      "timestamp": 18900000,
+      "price_pct": 0.95625
+    },
+    {
+      "timestamp": 18960000,
+      "price_pct": 0.9561111111111111
+    },
+    {
+      "timestamp": 19020000,
+      "price_pct": 0.9559722222222222
+    },
+    {
+      "timestamp": 19080000,
+      "price_pct": 0.9558333333333333
+    },
+    {
+      "timestamp": 19140000,
+      "price_pct": 0.9556944444444444
+    },
+    {
+      "timestamp": 19200000,
+      "price_pct": 0.9555555555555556
+    },
+    {
+      "timestamp": 19260000,
+      "price_pct": 0.9554166666666667
+    },
+    {
+      "timestamp": 19320000,
+      "price_pct": 0.9552777777777778
+    },
+    {
+      "timestamp": 19380000,
+      "price_pct": 0.9551388888888889
+    },
+    {
+      "timestamp": 19440000,
+      "price_pct": 0.955
+    },
+    {
+      "timestamp": 19500000,
+      "price_pct": 0.9548611111111112
+    },
+    {
+      "timestamp": 19560000,
+      "price_pct": 0.9547222222222222
+    },
+    {
+      "timestamp": 19620000,
+      "price_pct": 0.9545833333333333
+    },
+    {
+      "timestamp": 19680000,
+      "price_pct": 0.9544444444444444
+    },
+    {
+      "timestamp": 19740000,
+      "price_pct": 0.9543055555555555
+    },
+    {
+      "timestamp": 19800000,
+      "price_pct": 0.9541666666666667
+    },
+    {
+      "timestamp": 19860000,
+      "price_pct": 0.9540277777777778
+    },
+    {
+      "timestamp": 19920000,
+      "price_pct": 0.9538888888888889
+    },
+    {
+      "timestamp": 19980000,
+      "price_pct": 0.95375
+    },
+    {
+      "timestamp": 20040000,
+      "price_pct": 0.9536111111111111
+    },
+    {
+      "timestamp": 20100000,
+      "price_pct": 0.9534722222222223
+    },
+    {
+      "timestamp": 20160000,
+      "price_pct": 0.9533333333333334
+    },
+    {
+      "timestamp": 20220000,
+      "price_pct": 0.9531944444444445
+    },
+    {
+      "timestamp": 20280000,
+      "price_pct": 0.9530555555555555
+    },
+    {
+      "timestamp": 20340000,
+      "price_pct": 0.9529166666666666
+    },
+    {
+      "timestamp": 20400000,
+      "price_pct": 0.9527777777777777
+    },
+    {
+      "timestamp": 20460000,
+      "price_pct": 0.9526388888888889
+    },
+    {
+      "timestamp": 20520000,
+      "price_pct": 0.9525
+    },
+    {
+      "timestamp": 20580000,
+      "price_pct": 0.9523611111111111
+    },
+    {
+      "timestamp": 20640000,
+      "price_pct": 0.9522222222222222
+    },
+    {
+      "timestamp": 20700000,
+      "price_pct": 0.9520833333333333
+    },
+    {
+      "timestamp": 20760000,
+      "price_pct": 0.9519444444444445
+    },
+    {
+      "timestamp": 20820000,
+      "price_pct": 0.9518055555555556
+    },
+    {
+      "timestamp": 20880000,
+      "price_pct": 0.9516666666666667
+    },
+    {
+      "timestamp": 20940000,
+      "price_pct": 0.9515277777777778
+    },
+    {
+      "timestamp": 21000000,
+      "price_pct": 0.9513888888888888
+    },
+    {
+      "timestamp": 21060000,
+      "price_pct": 0.95125
+    },
+    {
+      "timestamp": 21120000,
+      "price_pct": 0.9511111111111111
+    },
+    {
+      "timestamp": 21180000,
+      "price_pct": 0.9509722222222222
+    },
+    {
+      "timestamp": 21240000,
+      "price_pct": 0.9508333333333333
+    },
+    {
+      "timestamp": 21300000,
+      "price_pct": 0.9506944444444444
+    },
+    {
+      "timestamp": 21360000,
+      "price_pct": 0.9505555555555556
+    },
+    {
+      "timestamp": 21420000,
+      "price_pct": 0.9504166666666667
+    },
+    {
+      "timestamp": 21480000,
+      "price_pct": 0.9502777777777778
+    },
+    {
+      "timestamp": 21540000,
+      "price_pct": 0.9501388888888889
+    },
+    {
+      "timestamp": 21600000,
+      "price_pct": 0.95
+    }
+  ]
+}
