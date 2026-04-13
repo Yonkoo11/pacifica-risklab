@@ -1,37 +1,34 @@
 # Pacifica RiskLab — Progress
 
 ## What Changed (Plain English)
-The simulation engine is built and working end-to-end. You can now stress-test any Pacifica market against real historical crash data.
+The complete app is working. You can open it, pick any Pacifica market, select a historical crash scenario, and see exactly how many positions would get liquidated, how the funding rate reacts, and whether the current parameters survive. You can also compare two different parameter settings side-by-side.
 
-## Status: Backend Complete, Frontend Next
+## Status: Core Product Complete
 
 ### Done
-1. **Simulation engine** — generates 1000 synthetic positions, runs liquidation cascade with market impact, tracks funding rate stress. All tests pass.
-2. **Pacifica API client** — pulls live data from all 63 markets (prices, OI, funding, orderbook). Verified against live API.
-3. **Historical crash scenarios** — fetched from Binance: Oct 2025 (-14.5%), LUNA spiral (-32%), Dec 2024 (-3.3%), SVB (-3.6%), plus synthetic 5% correction.
-4. **FastAPI backend** — 3 endpoints working: GET /api/markets, GET /api/scenarios, POST /api/simulate. Full pipeline tested.
+1. Simulation engine — cascade model with market impact, funding rate stress
+2. Pacifica API client — 63 live markets, orderbook depth, funding history
+3. Historical scenarios — Oct 2025 (-14.5%), LUNA (-32%), Dec 2024, SVB, synthetic
+4. FastAPI backend — 3 endpoints, full pipeline
+5. Svelte frontend — market selector, scenario picker, parameter sliders, cascade chart, funding stress chart, compare mode, model limitations
 
-### Test Results
-- BTC @ $72,340, 50x leverage, $100M hypothetical OI, Oct 2025 crash:
-  - 613/1000 positions liquidated
-  - 57% of OI wiped
-  - Survival score: 3.9/10
-- 50x produces significantly more liquidations than 10x (verified)
+### Verified Results (Oct 2025 crash, BTC 50x, $100M OI)
+- Survival Score: 3.9/10
+- 612/1000 positions liquidated
+- $56.6M volume liquidated (56.6% of OI)
+- 2 cascade rounds
+- Max drawdown: -14.2%
 
-### In Progress
-5. Svelte frontend with visualization
-
-### Not Started
-6. Comparison mode (two simulations side-by-side)
-7. Visual polish + demo prep
-
-## Key Findings During Build
-- Pacifica BTC OI is only $452. Tool uses hypothetical OI levels by default.
-- BTC orderbook has $4M bid depth (surprisingly deep for the OI level).
-- Oct 2025 crash was -14.5% (from $122K to $104K), not -40% as initially stated.
-- LUNA spiral is the most dramatic real scenario at -32%.
-- All API values are strings (must parse to float). max_leverage is the only int.
+### What's Next (Polish Phase)
+- `/design pacifica-risklab` for visual polish
+- GitHub repo creation + push
+- README with screenshots
+- Demo video
+- Submission
 
 ## To Resume
-Start FastAPI backend: `cd backend && python3 -m uvicorn main:app --reload`
-Then build Svelte frontend in `frontend/` directory.
+```bash
+cd ~/Projects/pacifica-risklab/backend && python3 -m uvicorn main:app --reload &
+cd ~/Projects/pacifica-risklab/frontend && npm run dev -- --port 5173 &
+# Open http://localhost:5173
+```
