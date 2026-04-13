@@ -15,6 +15,14 @@
     return '239,68,68';
   }
 
+  function scoreVerdict(score: number): string {
+    if (score >= 8) return 'RESILIENT';
+    if (score >= 6) return 'STABLE';
+    if (score >= 4) return 'FRAGILE';
+    if (score >= 2) return 'CRITICAL';
+    return 'CATASTROPHIC';
+  }
+
   function formatUsd(n: number): string {
     if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
     if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
@@ -29,6 +37,9 @@
     <div class="stat stat-hero" style="--score-rgb: {scoreRgb(result.summary.survival_score)}">
       <span class="stat-value hero-value" style="color: {scoreColor(result.summary.survival_score)}">
         {result.summary.survival_score}/10
+      </span>
+      <span class="verdict" style="color: {scoreColor(result.summary.survival_score)}">
+        {scoreVerdict(result.summary.survival_score)}
       </span>
       <span class="stat-label">Survival Score</span>
     </div>
@@ -101,6 +112,13 @@
   }
   .hero-value {
     font-size: 2.5rem;
+  }
+  .verdict {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: -0.25rem;
   }
   @keyframes pulse-glow {
     0%, 100% { box-shadow: 0 0 30px rgba(var(--score-rgb), 0.15); }

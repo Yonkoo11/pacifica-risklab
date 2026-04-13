@@ -73,6 +73,14 @@
     if (s === 'moderate') return '#eab308';
     return '#22c55e';
   }
+
+  function scoreVerdict(score: number): string {
+    if (score >= 8) return 'RESILIENT';
+    if (score >= 6) return 'STABLE';
+    if (score >= 4) return 'FRAGILE';
+    if (score >= 2) return 'CRITICAL';
+    return 'CATASTROPHIC';
+  }
 </script>
 
 <svelte:head>
@@ -106,7 +114,7 @@
         </select>
         {#if currentMarket}
           <div class="market-info">
-            <span>Mark: ${currentMarket.mark.toLocaleString()}</span>
+            <span>Mark: ${currentMarket.mark.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
             <span>Vol: {formatUsd(currentMarket.volume_24h)}</span>
           </div>
         {/if}
@@ -192,6 +200,7 @@
           <p>Running simulation...</p>
         </div>
       {:else if result}
+        <div class="results-entrance">
         <ResultsSummary {result} label={compareMode ? 'Current Parameters' : 'Simulation Results'} />
 
         {#if compareMode && compareResult}
@@ -239,11 +248,21 @@
             <li>Funding rate approximation (real funding depends on impact bid/ask)</li>
           </ul>
         </div>
+        </div>
       {:else}
         <div class="empty-state">
-          <h2>Select parameters and run a stress test</h2>
-          <p>Choose a Pacifica market, pick a historical crash scenario, and see how the current parameters hold up.</p>
-          <p class="hint">Tip: Use Compare Mode to evaluate parameter changes side-by-side.</p>
+          <div class="empty-icon">⚡</div>
+          <h2>Ready to stress test</h2>
+          <p>Pick a market and crash scenario, then hit <strong>Run Stress Test</strong> to simulate a liquidation cascade.</p>
+          <div class="empty-flow">
+            <span class="flow-step">Market</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Scenario</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Simulate</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step active">Survival Score</span>
+          </div>
         </div>
       {/if}
     </div>
@@ -566,6 +585,12 @@
     border-radius: 12px;
   }
 
+  .empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    filter: grayscale(0.3);
+  }
+
   .empty-state h2 {
     color: #ccc;
     margin: 0 0 0.5rem;
@@ -576,11 +601,48 @@
     color: #666;
     margin: 0.25rem 0;
     max-width: 400px;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
-  .hint {
-    font-style: italic;
-    font-size: 0.85rem;
+  .empty-state p strong {
+    color: #f59e0b;
+  }
+
+  .empty-flow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .flow-step {
+    padding: 0.35rem 0.75rem;
+    background: #0f0f1a;
+    border: 1px solid #2a2a4a;
+    border-radius: 6px;
+    color: #888;
+  }
+
+  .flow-step.active {
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.06);
+  }
+
+  .flow-arrow {
+    color: #444;
+  }
+
+  .results-entrance {
+    display: contents;
+    animation: fadeSlideIn 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .compare-diff {
