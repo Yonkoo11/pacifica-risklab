@@ -12,7 +12,7 @@
     if (!canvas || data.length === 0) return;
 
     const labels = data.map((_, i) => i);
-    const rates = data.map(d => d.funding_rate * 100); // convert to percentage
+    const rates = data.map(d => d.funding_rate * 100);
     const imbalance = data.map(d => d.imbalance * 100);
 
     chart = new Chart(canvas, {
@@ -24,10 +24,23 @@
             label: 'Funding Rate (%)',
             data: rates,
             borderColor: '#a855f7',
-            backgroundColor: 'rgba(168, 85, 247, 0.1)',
+            backgroundColor: (ctx) => {
+              const chart = ctx.chart;
+              const { ctx: c, chartArea } = chart;
+              if (!chartArea) return 'rgba(168, 85, 247, 0.1)';
+              const gradient = c.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+              gradient.addColorStop(0, 'rgba(168, 85, 247, 0)');
+              gradient.addColorStop(1, 'rgba(168, 85, 247, 0.15)');
+              return gradient;
+            },
             borderWidth: 2,
             pointRadius: 0,
+            pointHoverRadius: 4,
+            pointHoverBackgroundColor: '#a855f7',
+            pointHoverBorderColor: '#fff',
+            pointHoverBorderWidth: 2,
             fill: true,
+            tension: 0.2,
             yAxisID: 'y',
           },
           {
@@ -35,9 +48,12 @@
             data: imbalance,
             borderColor: '#f59e0b',
             backgroundColor: 'transparent',
-            borderWidth: 1,
+            borderWidth: 1.5,
             pointRadius: 0,
+            pointHoverRadius: 3,
+            pointHoverBackgroundColor: '#f59e0b',
             borderDash: [4, 4],
+            tension: 0.2,
             yAxisID: 'y1',
           },
         ],
@@ -45,25 +61,80 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
         plugins: {
-          legend: { labels: { color: '#999' } },
+          legend: {
+            labels: {
+              color: '#888',
+              font: { size: 11, family: '-apple-system, system-ui, sans-serif' },
+              padding: 16,
+              usePointStyle: true,
+              pointStyleWidth: 8,
+            },
+          },
+          tooltip: {
+            backgroundColor: 'rgba(15, 15, 26, 0.95)',
+            titleColor: '#e0e0e0',
+            bodyColor: '#b0b0b8',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            cornerRadius: 8,
+            titleFont: { size: 12, weight: '600' },
+            bodyFont: { size: 12 },
+            callbacks: {
+              title: (items: any[]) => `Hour ${items[0].label}`,
+              label: (ctx: any) => {
+                if (ctx.datasetIndex === 0) return ` Funding: ${ctx.parsed.y.toFixed(3)}%`;
+                return ` Imbalance: ${ctx.parsed.y.toFixed(1)}%`;
+              },
+            },
+          },
         },
         scales: {
           x: {
-            ticks: { color: '#666', maxTicksLimit: 10 },
-            grid: { color: '#1a1a2e' },
+            ticks: {
+              color: '#555',
+              font: { size: 11 },
+              maxTicksLimit: 10,
+            },
+            grid: { color: 'rgba(255,255,255,0.03)', lineWidth: 1 },
+            border: { color: 'rgba(255,255,255,0.06)' },
           },
           y: {
             position: 'left',
-            title: { display: true, text: 'Funding Rate (%)', color: '#999' },
-            ticks: { color: '#a855f7' },
-            grid: { color: '#1a1a2e' },
+            title: {
+              display: true,
+              text: 'Funding Rate (%)',
+              color: '#666',
+              font: { size: 11 },
+            },
+            ticks: {
+              color: '#a855f7',
+              font: { size: 11 },
+              callback: (v: unknown) => `${Number(v).toFixed(2)}%`,
+            },
+            grid: { color: 'rgba(255,255,255,0.03)', lineWidth: 1 },
+            border: { display: false },
           },
           y1: {
             position: 'right',
-            title: { display: true, text: 'OI Imbalance (%)', color: '#999' },
-            ticks: { color: '#f59e0b' },
+            title: {
+              display: true,
+              text: 'OI Imbalance (%)',
+              color: '#666',
+              font: { size: 11 },
+            },
+            ticks: {
+              color: '#f59e0b',
+              font: { size: 11 },
+              callback: (v: unknown) => `${Number(v).toFixed(0)}%`,
+            },
             grid: { drawOnChartArea: false },
+            border: { display: false },
           },
         },
       },

@@ -11,7 +11,6 @@
     if (chart) chart.destroy();
     if (!canvas || steps.length === 0) return;
 
-    // Aggregate by time_step: cumulative liquidations and price
     const byStep = new Map<number, { cumLiq: number; price: number; cumVol: number }>();
     let cumLiq = 0;
     let cumVol = 0;
@@ -28,14 +27,23 @@
     chart = new Chart(canvas, {
       type: 'bar',
       data: {
-        labels: labels.map(l => `Step ${l}`),
+        labels: labels.map(l => `${l}`),
         datasets: [
           {
             label: 'Cumulative Liquidations',
             data: liqData,
-            backgroundColor: 'rgba(239, 68, 68, 0.7)',
-            borderColor: 'rgba(239, 68, 68, 1)',
+            backgroundColor: (ctx) => {
+              const chart = ctx.chart;
+              const { ctx: c, chartArea } = chart;
+              if (!chartArea) return 'rgba(239, 68, 68, 0.6)';
+              const gradient = c.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+              gradient.addColorStop(0, 'rgba(239, 68, 68, 0.3)');
+              gradient.addColorStop(1, 'rgba(239, 68, 68, 0.8)');
+              return gradient;
+            },
+            borderColor: 'rgba(239, 68, 68, 0.9)',
             borderWidth: 1,
+            borderRadius: 2,
             yAxisID: 'y',
           },
           {
@@ -46,6 +54,11 @@
             backgroundColor: 'transparent',
             borderWidth: 2,
             pointRadius: 0,
+            pointHoverRadius: 4,
+            pointHoverBackgroundColor: '#3b82f6',
+            pointHoverBorderColor: '#fff',
+            pointHoverBorderWidth: 2,
+            tension: 0.1,
             yAxisID: 'y1',
           },
         ],
@@ -53,30 +66,85 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
         plugins: {
           legend: {
-            labels: { color: '#999' },
+            labels: {
+              color: '#888',
+              font: { size: 11, family: '-apple-system, system-ui, sans-serif' },
+              padding: 16,
+              usePointStyle: true,
+              pointStyleWidth: 8,
+            },
+          },
+          tooltip: {
+            backgroundColor: 'rgba(15, 15, 26, 0.95)',
+            titleColor: '#e0e0e0',
+            bodyColor: '#b0b0b8',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            cornerRadius: 8,
+            titleFont: { size: 12, weight: '600' },
+            bodyFont: { size: 12 },
+            callbacks: {
+              title: (items: any[]) => `Time Step ${items[0].label}`,
+              label: (ctx: any) => {
+                if (ctx.datasetIndex === 0) return ` ${ctx.parsed.y.toLocaleString()} liquidated`;
+                return ` $${ctx.parsed.y.toLocaleString()}`;
+              },
+            },
           },
         },
         scales: {
           x: {
-            ticks: { color: '#666', maxTicksLimit: 10 },
-            grid: { color: '#1a1a2e' },
+            ticks: {
+              color: '#555',
+              font: { size: 11 },
+              maxTicksLimit: 8,
+              autoSkip: true,
+              maxRotation: 0,
+            },
+            grid: { color: 'rgba(255,255,255,0.03)', lineWidth: 1 },
+            border: { color: 'rgba(255,255,255,0.06)' },
           },
           y: {
             position: 'left',
-            title: { display: true, text: 'Cumulative Liquidations', color: '#999' },
-            ticks: { color: '#ef4444' },
-            grid: { color: '#1a1a2e' },
+            title: {
+              display: true,
+              text: 'Liquidations',
+              color: '#666',
+              font: { size: 11 },
+            },
+            ticks: {
+              color: '#ef4444',
+              font: { size: 11 },
+              callback: (v: unknown) => Number(v).toLocaleString(),
+            },
+            grid: { color: 'rgba(255,255,255,0.03)', lineWidth: 1 },
+            border: { display: false },
           },
           y1: {
             position: 'right',
-            title: { display: true, text: 'Price ($)', color: '#999' },
+            title: {
+              display: true,
+              text: 'Price',
+              color: '#666',
+              font: { size: 11 },
+            },
             ticks: {
               color: '#3b82f6',
-              callback: (v: unknown) => `$${Number(v).toLocaleString()}`,
+              font: { size: 11 },
+              callback: (v: unknown) => {
+                const n = Number(v);
+                return n >= 1000 ? `$${(n / 1000).toFixed(0)}K` : `$${n}`;
+              },
             },
             grid: { drawOnChartArea: false },
+            border: { display: false },
           },
         },
       },
