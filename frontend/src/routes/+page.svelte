@@ -263,7 +263,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.06) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -299,10 +299,9 @@
   h1 {
     margin: 0;
     font-size: 1.75rem;
-    background: linear-gradient(135deg, #3b82f6, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f59e0b;
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
@@ -334,7 +333,7 @@
   }
 
   :global(::selection) {
-    background: rgba(59, 130, 246, 0.3);
+    background: rgba(245, 158, 11, 0.3);
   }
 
   :global(::-webkit-scrollbar) {
@@ -348,7 +347,7 @@
     border-radius: 3px;
   }
   :global(::-webkit-scrollbar-thumb:hover) {
-    background: #3b82f6;
+    background: #f59e0b;
   }
 
   .error {
@@ -382,7 +381,7 @@
   }
 
   section:focus-within {
-    border-left-color: #3b82f6;
+    border-left-color: #f59e0b;
   }
 
   label {
@@ -396,7 +395,7 @@
 
   .value {
     float: right;
-    color: #3b82f6;
+    color: #f59e0b;
     font-weight: 600;
     text-transform: none;
     letter-spacing: 0;
@@ -437,13 +436,13 @@
   }
 
   .scenario-btn:hover {
-    border-color: #3b82f6;
+    border-color: rgba(245, 158, 11, 0.4);
   }
 
   .scenario-btn.active {
-    border-color: #3b82f6;
-    border-left: 2px solid #3b82f6;
-    background: linear-gradient(90deg, rgba(59,130,246,0.08) 0%, #0f1020 100%);
+    border-color: rgba(245, 158, 11, 0.4);
+    border-left: 2px solid #f59e0b;
+    background: linear-gradient(90deg, rgba(245,158,11,0.06) 0%, #0f0f1a 100%);
   }
 
   .scenario-severity {
@@ -454,7 +453,7 @@
 
   input[type="range"] {
     width: 100%;
-    accent-color: #3b82f6;
+    accent-color: #f59e0b;
   }
 
   .range-labels {
@@ -478,7 +477,7 @@
 
   .reset-btn:hover {
     color: #999;
-    border-color: #3b82f6;
+    border-color: rgba(245, 158, 11, 0.4);
   }
 
   .toggle-label {
@@ -489,7 +488,7 @@
   }
 
   .toggle-label input {
-    accent-color: #3b82f6;
+    accent-color: #f59e0b;
   }
 
   .compare-controls {
@@ -499,24 +498,24 @@
   .run-btn {
     width: 100%;
     padding: 0.85rem;
-    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    background: #f59e0b;
     border: none;
     border-radius: 8px;
-    color: #fff;
+    color: #000;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(168, 85, 247, 0.15);
-    transition: box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
+    transition: box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.1s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .run-btn:hover {
-    box-shadow: 0 6px 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.25);
+    box-shadow: 0 6px 30px rgba(245, 158, 11, 0.4);
     transform: translateY(-1px);
   }
 
   .run-btn:active {
-    transform: translateY(0);
+    transform: scale(0.97);
   }
 
   .run-btn:disabled {
@@ -524,13 +523,6 @@
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
-    background-size: 200% 100%;
-    animation: shimmer 1.5s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
   }
 
   .results {
@@ -552,7 +544,7 @@
     width: 40px;
     height: 40px;
     border: 3px solid #2a2a4a;
-    border-top-color: #3b82f6;
+    border-top-color: #f59e0b;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
     margin-bottom: 1rem;
@@ -569,7 +561,7 @@
     justify-content: center;
     padding: 4rem 2rem;
     text-align: center;
-    background: radial-gradient(ellipse at 50% 30%, rgba(59,130,246,0.06) 0%, #1a1a2e 60%);
+    background: radial-gradient(ellipse at 50% 30%, rgba(245,158,11,0.04) 0%, #1a1a2e 60%);
     border: 1px solid #2a2a4a;
     border-radius: 12px;
   }

@@ -68,7 +68,7 @@
     border: 1px solid #3a3a5a;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 24px rgba(59,130,246,0.08);
+    box-shadow: 0 4px 24px rgba(245,158,11,0.06);
   }
   h3 {
     margin: 0 0 1rem;
@@ -92,6 +92,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
+    font-variant-numeric: tabular-nums;
   }
   .stat-hero {
     grid-column: 1 / -1;
