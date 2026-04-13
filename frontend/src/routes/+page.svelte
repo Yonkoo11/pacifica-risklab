@@ -85,7 +85,7 @@
       <h1>RiskLab</h1>
       <span class="subtitle">Perpetual Futures Parameter Stress Testing</span>
     </div>
-    <span class="powered">Powered by Pacifica API</span>
+    <span class="powered"><span class="live-dot"></span>Powered by Pacifica API</span>
   </header>
 
   {#if error}
@@ -314,6 +314,41 @@
   .powered {
     font-size: 0.75rem;
     color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+    50% { opacity: 0.5; box-shadow: 0 0 4px rgba(34, 197, 94, 0.2); }
+  }
+
+  :global(::selection) {
+    background: rgba(59, 130, 246, 0.3);
+  }
+
+  :global(::-webkit-scrollbar) {
+    width: 6px;
+  }
+  :global(::-webkit-scrollbar-track) {
+    background: #0a0a1a;
+  }
+  :global(::-webkit-scrollbar-thumb) {
+    background: #2a2a4a;
+    border-radius: 3px;
+  }
+  :global(::-webkit-scrollbar-thumb:hover) {
+    background: #3b82f6;
   }
 
   .error {
@@ -407,7 +442,8 @@
 
   .scenario-btn.active {
     border-color: #3b82f6;
-    background: #0f1020;
+    border-left: 2px solid #3b82f6;
+    background: linear-gradient(90deg, rgba(59,130,246,0.08) 0%, #0f1020 100%);
   }
 
   .scenario-severity {
@@ -470,16 +506,31 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.15s;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(168, 85, 247, 0.15);
+    transition: box-shadow 0.2s, transform 0.1s;
   }
 
   .run-btn:hover {
-    opacity: 0.9;
+    box-shadow: 0 6px 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(168, 85, 247, 0.25);
+    transform: translateY(-1px);
+  }
+
+  .run-btn:active {
+    transform: translateY(0);
   }
 
   .run-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
 
   .results {
@@ -518,7 +569,7 @@
     justify-content: center;
     padding: 4rem 2rem;
     text-align: center;
-    background: #1a1a2e;
+    background: radial-gradient(ellipse at 50% 30%, rgba(59,130,246,0.06) 0%, #1a1a2e 60%);
     border: 1px solid #2a2a4a;
     border-radius: 12px;
   }

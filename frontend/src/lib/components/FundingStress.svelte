@@ -79,7 +79,7 @@
 </script>
 
 <div class="chart-container">
-  <h3>Funding Rate Stress</h3>
+  <h3><span class="dot" style="background:#a855f7"></span>Funding Rate Stress</h3>
   <div class="chart-wrapper">
     <canvas bind:this={canvas}></canvas>
   </div>
@@ -91,11 +91,33 @@
     border: 1px solid #2a2a4a;
     border-radius: 12px;
     padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .chart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, #a855f7, transparent);
+    border-radius: 0 0 1px 1px;
   }
   h3 {
     margin: 0 0 1rem;
     color: #e0e0e0;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
   }
   .chart-wrapper {
     height: 250px;
