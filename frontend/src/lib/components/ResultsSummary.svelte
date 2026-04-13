@@ -136,4 +136,25 @@
     color: #666;
     font-style: italic;
   }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .stat-hero {
+      grid-column: 1 / -1;
+    }
+    .hero-value {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-value {
+      font-size: 1.25rem;
+    }
+  }
 </style>

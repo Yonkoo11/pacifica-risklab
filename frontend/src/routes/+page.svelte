@@ -713,4 +713,80 @@
     color: #555;
     line-height: 1.6;
   }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    main {
+      padding: 1rem;
+    }
+
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .powered {
+      align-self: flex-end;
+    }
+
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+
+    .run-btn {
+      position: sticky;
+      bottom: 1rem;
+      z-index: 10;
+    }
+
+    .stats-grid,
+    .diff-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .empty-flow {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-grid,
+    .diff-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .scenario-btn {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.85rem;
+      min-height: 44px;
+    }
+
+    select {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+      min-height: 44px;
+    }
+
+    .run-btn {
+      padding: 1rem;
+      font-size: 1.1rem;
+      min-height: 48px;
+    }
+
+    .reset-btn {
+      min-height: 44px;
+      font-size: 0.8rem;
+    }
+  }
 </style>
