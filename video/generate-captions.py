@@ -11,13 +11,13 @@ os.makedirs(COMPOSITES_DIR, exist_ok=True)
 
 # Same text as audio clips (verbatim)
 clips = {
-    "01-hero": "Survival score: 3.9 out of 10. Critical.\n612 positions liquidated in a single crash.",
-    "02-markets": "Pacifica offers up to 50x leverage across 63 markets.\nBut nobody's tested what happens to these parameters during a real crash.",
-    "03-scenarios": "Gauntlet charges one point six million dollars a year\nfor this kind of stress testing. There's no open source alternative.",
-    "04-fullapp": "RiskLab pulls live parameters from Pacifica's API.\nPick a market. Pick a historical crash. Set your hypothetical open interest. Hit run.",
-    "05-cascade": "The engine generates a thousand synthetic positions,\nthen replays the crash minute by minute.\nEach liquidation hits the price. That's the cascade.",
-    "06-compare": "Compare mode shows the impact of changing parameters.\nDrop leverage from 50x to 20x. 224 fewer liquidations.\nSurvival jumps from critical to stable.",
-    "07-close": "RiskLab. Self-serve parameter stress testing.\nBuilt on Pacifica.",
+    "01-hero": "3.9 out of 10. That's how Pacifica's BTC market scores\nwhen you replay the October crash at $100M open interest.",
+    "02-markets": "Pacifica lets you trade with up to 50x leverage.\n63 markets, all live. But what happens to those settings\nwhen the market drops 15% in an hour?",
+    "03-scenarios": "Right now, the only people who can answer that question\ncharge $1.6M a year. That's what Gauntlet costs.\nThere's nothing else.",
+    "04-fullapp": "So we built RiskLab. It connects to Pacifica's API,\npulls the live parameters, and stress-tests them\nagainst real historical crashes.",
+    "05-cascade": "Under the hood, it generates 1,000 synthetic positions\nand replays the crash minute by minute.\nLiquidations push the price down. That's the cascade.",
+    "06-compare": "Turn on compare mode. Drop leverage from 50x to 20x.\n224 fewer liquidations.\nThe score jumps from critical to stable.",
+    "07-close": "RiskLab. Self-serve stress testing\nfor perp parameters. Built on Pacifica.",
 }
 
 # Find a suitable font

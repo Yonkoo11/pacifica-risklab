@@ -8,13 +8,13 @@ VOICE_ID="nPczCjzI2devNBz1zQrb"
 MODEL="eleven_multilingual_v2"
 
 declare -A clips
-clips[01-hero]="Survival score: 3.9 out of 10. Critical. 612 positions liquidated in a single crash."
-clips[02-markets]="Pacifica offers up to 50x leverage across 63 markets. But nobody's tested what happens to these parameters during a real crash."
-clips[03-scenarios]="Gauntlet charges one point six million dollars a year for this kind of stress testing. There's no open source alternative."
-clips[04-fullapp]="RiskLab pulls live parameters from Pacifica's API. Pick a market. Pick a historical crash. Set your hypothetical open interest. Hit run."
-clips[05-cascade]="The engine generates a thousand synthetic positions, then replays the crash minute by minute. Each liquidation hits the price. The price drop triggers more liquidations. That's the cascade."
-clips[06-compare]="Compare mode shows the impact of changing parameters. Drop leverage from 50x to 20x. 224 fewer liquidations. Survival jumps from critical to stable."
-clips[07-close]="RiskLab. Self-serve parameter stress testing. Built on Pacifica."
+clips[01-hero]="Three point nine out of ten. That's how Pacifica's BTC market scores when you replay the October crash at a hundred million in open interest."
+clips[02-markets]="Pacifica lets you trade with up to 50x leverage. Sixty three markets, all live. But what actually happens to those settings when the market drops fifteen percent in an hour?"
+clips[03-scenarios]="Right now, the only people who can answer that question charge one point six million a year. That's what Gauntlet costs. There's nothing else."
+clips[04-fullapp]="So we built RiskLab. It connects to Pacifica's API, pulls the live parameters, and stress-tests them against real historical crashes. You pick a market, pick a scenario, set your OI, and hit run."
+clips[05-cascade]="Under the hood, it generates a thousand synthetic positions and replays the crash minute by minute. When positions get liquidated, that pushes the price down further, which triggers more liquidations. That's the cascade effect."
+clips[06-compare]="Here's where it gets useful. Turn on compare mode, drop the leverage from 50x to 20x, and you can see exactly what changes. 224 fewer liquidations. The score jumps from critical to stable."
+clips[07-close]="RiskLab. Self-serve stress testing for perp parameters. Built on Pacifica."
 
 for clip in 01-hero 02-markets 03-scenarios 04-fullapp 05-cascade 06-compare 07-close; do
   OUT="$AUDIO_DIR/$clip.mp3"
@@ -40,7 +40,6 @@ for clip in 01-hero 02-markets 03-scenarios 04-fullapp 05-cascade 06-compare 07-
     }" \
     --output "$OUT"
 
-  # Verify it's audio not error JSON
   if file "$OUT" | grep -q "JSON\|text\|XML"; then
     echo "ERROR: $clip got error response:"
     cat "$OUT"
