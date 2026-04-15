@@ -8,15 +8,18 @@ VOICE_ID="nPczCjzI2devNBz1zQrb"
 MODEL="eleven_multilingual_v2"
 
 declare -A clips
-clips[01-hero]="Three point nine out of ten. That's how Pacifica's BTC market scores when you replay the October crash at a hundred million in open interest."
-clips[02-markets]="Pacifica lets you trade with up to 50x leverage. Sixty three markets, all live. But what actually happens to those settings when the market drops fifteen percent in an hour?"
-clips[03-scenarios]="Right now, the only people who can answer that question charge one point six million a year. That's what Gauntlet costs. There's nothing else."
-clips[04-fullapp]="So we built RiskLab. It connects to Pacifica's API, pulls the live parameters, and stress-tests them against real historical crashes. You pick a market, pick a scenario, set your OI, and hit run."
-clips[05-cascade]="Under the hood, it generates a thousand synthetic positions and replays the crash minute by minute. When positions get liquidated, that pushes the price down further, which triggers more liquidations. That's the cascade effect."
-clips[06-compare]="Here's where it gets useful. Turn on compare mode, drop the leverage from 50x to 20x, and you can see exactly what changes. 224 fewer liquidations. The score jumps from critical to stable."
-clips[07-close]="RiskLab. Self-serve stress testing for perp parameters. Built on Pacifica."
+clips[01-hook]="Three point nine out of ten. Critical."
+clips[02-hook-context]="That's how Pacifica's BTC market scores when you replay the October crash at a hundred million in open interest."
+clips[03-problem]="Pacifica lets you trade with up to 50x leverage across 63 markets. But what happens to those settings when the market drops fifteen percent in an hour?"
+clips[04-agitation]="Right now, the only people who can answer that question charge one point six million a year. That's Gauntlet. There's nothing else."
+clips[05-solution-intro]="So we built RiskLab. It connects to Pacifica's API and stress-tests live parameters against real crashes."
+clips[06-walkthrough]="Pick a market. Pick a scenario. Set your OI. Hit run. The simulation takes about three seconds."
+clips[07-cascade]="Under the hood, a thousand synthetic positions get liquidated minute by minute. Each liquidation pushes the price down. That triggers more liquidations. That's the cascade."
+clips[08-funding]="The funding rate flips negative as open interest skews. You can see exactly when the stress peaks."
+clips[09-compare]="Compare mode. Drop leverage from 50x to 20x. 224 fewer liquidations. The score jumps from critical to stable."
+clips[10-close]="RiskLab. Self-serve stress testing for perp parameters. Built on Pacifica."
 
-for clip in 01-hero 02-markets 03-scenarios 04-fullapp 05-cascade 06-compare 07-close; do
+for clip in 01-hook 02-hook-context 03-problem 04-agitation 05-solution-intro 06-walkthrough 07-cascade 08-funding 09-compare 10-close; do
   OUT="$AUDIO_DIR/$clip.mp3"
   if [[ -f "$OUT" ]]; then
     echo "Skipping $clip (exists)"
@@ -40,9 +43,9 @@ for clip in 01-hero 02-markets 03-scenarios 04-fullapp 05-cascade 06-compare 07-
     }" \
     --output "$OUT"
 
-  if file "$OUT" | grep -q "JSON\|text\|XML"; then
-    echo "ERROR: $clip got error response:"
-    cat "$OUT"
+  # Check if output is valid audio (MP3 starts with ID3 or ff fb)
+  if file "$OUT" | grep -q "ASCII text\|JSON data\|XML"; then
+    echo "ERROR: $clip got error response"
     rm "$OUT"
     exit 1
   fi

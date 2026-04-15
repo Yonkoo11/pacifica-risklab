@@ -1,41 +1,57 @@
-# RiskLab Demo — Voiceover Clips (v2)
+# RiskLab Demo — Voiceover Clips (v3 - fast cuts, no dead frames)
 
-Framework: PAS (Problem → Agitation → Solution)
-Target: 70-80 seconds
+Framework: PAS
+Target: 75-85 seconds
+Rule: No single frame held longer than 8 seconds
 
 ---
 
-## Clip 01 — Hook (Result First)
-**Frame:** Survival score hero showing 3.9/10 CRITICAL with red glow, stats below
-**Audio:** "Three point nine out of ten. That's how Pacifica's BTC market scores when you replay the October crash at a hundred million in open interest."
-**Gate:** Opens with a specific, concrete result. Conversational. The number is the hook.
+## Clip 01 — Hook (3s, fast)
+**Frame:** Tight crop of survival score 3.9/10 CRITICAL with red glow
+**Audio:** "Three point nine out of ten. Critical."
+**Gate:** Fast hit. Score + verdict. 3 seconds max.
 
-## Clip 02 — Problem
-**Frame:** Market selector showing BTC 50x, 63 markets loaded from Pacifica API
-**Audio:** "Pacifica lets you trade with up to 50x leverage. Sixty three markets, all live. But what actually happens to those settings when the market drops fifteen percent in an hour?"
-**Gate:** Real question, not a statement. Uses Pacifica's own numbers.
+## Clip 02 — Hook context (6s)
+**Frame:** Full results page showing stats + cascade chart beginning
+**Audio:** "That's how Pacifica's BTC market scores when you replay the October crash at a hundred million in open interest."
+**Gate:** Context for the number. Different frame from 01.
 
-## Clip 03 — Agitation
-**Frame:** Scenario selector with EXTREME/CATASTROPHIC badges visible
-**Audio:** "Right now, the only people who can answer that question charge one point six million a year. That's what Gauntlet costs. There's nothing else."
-**Gate:** Makes it personal. "The only people" not "companies."
+## Clip 03 — Problem (7s)
+**Frame:** Market selector showing BTC 50x, scenarios with severity badges
+**Audio:** "Pacifica lets you trade with up to 50x leverage across 63 markets. But what happens to those settings when the market drops fifteen percent in an hour?"
+**Gate:** Shows the live data from Pacifica's API.
 
-## Clip 04 — Solution walkthrough
-**Frame:** Full app showing controls on left, results summary on right
-**Audio:** "So we built RiskLab. It connects to Pacifica's API, pulls the live parameters, and stress-tests them against real historical crashes. You pick a market, pick a scenario, set your OI, and hit run."
-**Gate:** "So we built" is natural transition. Four steps, quick.
+## Clip 04 — Agitation (6s)
+**Frame:** LUNA scenario results showing 3.2/10, 682 liquidated, -32% drawdown
+**Audio:** "Right now, the only people who can answer that question charge one point six million a year. That's Gauntlet. There's nothing else."
+**Gate:** Different scenario results = visually distinct from 01/02.
 
-## Clip 05 — The hard part
-**Frame:** Cascade chart showing gradient bars accelerating, price line dropping
-**Audio:** "Under the hood, it generates a thousand synthetic positions and replays the crash minute by minute. When positions get liquidated, that pushes the price down further, which triggers more liquidations. That's the cascade effect."
-**Gate:** "Under the hood" is how you'd actually explain this. Not "the engine generates."
+## Clip 05 — Solution intro (5s)
+**Frame:** Empty state with flow diagram: Market → Scenario → Simulate → Survival Score
+**Audio:** "So we built RiskLab. It connects to Pacifica's API and stress-tests live parameters against real crashes."
+**Gate:** Shows the workflow before results. Different visual.
 
-## Clip 06 — Compare mode
-**Frame:** Compare mode showing CRITICAL 3.9 vs STABLE 6.1, diff section with green -224
-**Audio:** "Here's where it gets useful. Turn on compare mode, drop the leverage from 50x to 20x, and you can see exactly what changes. 224 fewer liquidations. The score jumps from critical to stable."
-**Gate:** "Here's where it gets useful" builds on previous clip naturally.
+## Clip 06 — Solution walkthrough (6s)
+**Frame:** Full app with controls on left, cascade chart on right, results above
+**Audio:** "Pick a market. Pick a scenario. Set your OI. Hit run. The simulation takes about three seconds."
+**Gate:** Shows the complete interface in action.
 
-## Clip 07 — Close
-**Frame:** Full app header with RiskLab logo, results visible
+## Clip 07 — Technical depth (7s)
+**Frame:** Cascade chart zoomed — gradient bars accelerating at step 86+
+**Audio:** "Under the hood, a thousand synthetic positions get liquidated minute by minute. Each liquidation pushes the price down. That triggers more liquidations. That's the cascade."
+**Gate:** The chart IS the explanation. Bars tell the story.
+
+## Clip 08 — Funding chart (5s)
+**Frame:** Funding Rate Stress chart — purple line dropping, OI imbalance spiking
+**Audio:** "The funding rate flips negative as open interest skews. You can see exactly when the stress peaks."
+**Gate:** Genuinely different visual. Shows second chart type.
+
+## Clip 09 — Compare mode (7s)
+**Frame:** Compare mode: CRITICAL 3.9 vs STABLE 6.1, diff showing -224, +2.2, -19.8%
+**Audio:** "Compare mode. Drop leverage from 50x to 20x. 224 fewer liquidations. The score jumps from critical to stable."
+**Gate:** The strongest "wow" moment. Numbers tell the story.
+
+## Clip 10 — Close (4s, hold 4s)
+**Frame:** RiskLab header + GitHub link or clean branded shot
 **Audio:** "RiskLab. Self-serve stress testing for perp parameters. Built on Pacifica."
-**Gate:** Three beats. Product. Description. Attribution. Hold 4 seconds.
+**Gate:** Three beats. Hold 4 seconds for judges to note the name.
