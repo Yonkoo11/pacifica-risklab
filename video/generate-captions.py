@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Composite subtitle text onto frame images."""
+"""Composite subtitle text onto frame images. Only for static-frame clips."""
 
 from PIL import Image, ImageDraw, ImageFont
 import os
@@ -8,17 +8,25 @@ FRAMES_DIR = os.path.join(os.path.dirname(__file__), "frames")
 COMPOSITES_DIR = os.path.join(os.path.dirname(__file__), "composites")
 os.makedirs(COMPOSITES_DIR, exist_ok=True)
 
+# Only clips that use static frames (Remotion clips don't need captions - they're self-contained)
 clips = {
-    "01-hook": "3.9 out of 10. Critical.",
-    "02-hook-context": "That's how Pacifica's BTC market scores\nwhen you replay the October crash at $100M open interest.",
-    "03-problem": "Pacifica lets you trade with up to 50x leverage.\n63 markets, all live. But what happens when\nthe market drops 15% in an hour?",
-    "04-agitation": "Right now, the only people who can answer that\ncharge $1.6M a year. That's Gauntlet.\nThere's nothing else.",
-    "05-solution-intro": "So we built RiskLab. It connects to Pacifica's API\nand stress-tests live parameters against real crashes.",
-    "06-walkthrough": "Pick a market. Pick a scenario. Set your OI.\nHit run. Three seconds.",
-    "07-cascade": "A thousand synthetic positions get liquidated\nminute by minute. Each liquidation pushes\nthe price down. That's the cascade.",
-    "08-funding": "The funding rate flips negative as OI skews.\nYou can see exactly when the stress peaks.",
-    "09-compare": "Compare mode. Drop leverage from 50x to 20x.\n224 fewer liquidations.\nThe score jumps from critical to stable.",
-    "10-close": "RiskLab. Self-serve stress testing\nfor perp parameters. Built on Pacifica.",
+    "02-problem-setup": "Pacifica lets you trade with up to 50x leverage.\n63 perpetuals markets. Real money every day.",
+    "03-gap": "Nobody has tested what those parameters do\nin a real crash.",
+    "04-who": "Protocol teams. Risk analysts. Position sizers.\nGauntlet charges $1.6M a year for this.",
+    "05-intro": "Pick a market. Pick a crash. Set your OI.\nHit run. See what breaks.",
+    "06-fit": "Runs on Pacifica's public API.\nNo wallet, no auth.",
+    "07-market": "Every Pacifica perp.\nLive leverage and open interest.",
+    "08-scenario": "Five historical scenarios from Binance candles.\nOctober 2025. LUNA. Dec '24. SVB. Synthetic 5%.",
+    "09-parameters": "Three sliders.\nHypothetical OI. Leverage override. Long/short ratio.",
+    "11-stats": "612 liquidated. $56M wiped. 56% of OI gone.\n2 cascade rounds.",
+    "13-funding": "Funding flips negative as OI skews.\nYou see exactly when stress hits its cap.",
+    "15-limits": "Model assumptions are documented.\nLinear impact. Synthetic positions. No cross-margin.",
+    "16-api-1": "Market list and live prices.\nAll from Pacifica's info endpoints.",
+    "17-api-2": "Funding history. Orderbook depth.\nFour endpoints, zero auth.",
+    "18-builder": "No builder code for read-only analytics.\nEverything on screen flows from Pacifica.",
+    "19-who-uses": "Pacifica's live BTC OI is around $450.\nWhat breaks at $100M? At $500M?",
+    "20-why-now": "Good parameters now. Good parameters after you scale.\nSeconds to check, not days.",
+    "21-roadmap": "Next: multi-market correlation.\nInsurance fund modeling. Live parameter alerts.",
 }
 
 font_candidates = [
@@ -27,12 +35,7 @@ font_candidates = [
     "/Library/Fonts/Arial.ttf",
 ]
 
-font_path = None
-for f in font_candidates:
-    if os.path.exists(f):
-        font_path = f
-        break
-
+font_path = next((f for f in font_candidates if os.path.exists(f)), None)
 font = ImageFont.truetype(font_path, 32) if font_path else ImageFont.load_default()
 
 for clip_name, text in clips.items():
