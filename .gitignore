@@ -1,0 +1,8 @@
+node_modules/
+video/remotion/node_modules/
+video/segments/
+video/remotion-out/
+video/screenrec/
+__pycache__/
+*.pyc
+.DS_Store
